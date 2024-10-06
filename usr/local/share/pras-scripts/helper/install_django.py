@@ -1,6 +1,6 @@
 import os
 import sys
-
+import argparse
 import importlib
 
 def add_app_to_installed_apps(prj_name, app_name, settings_file):
@@ -70,16 +70,29 @@ def add_template_dir(prj_name, template_dir, settings_file):
         f.writelines(lines)
 
 
+def main():
+    parser = argparse.ArgumentParser(description="Update Django settings with app and template directory.")
 
-if __name__ == "__main__":
-    prj_name = sys.argv[1] 
-    app_name = sys.argv[2] 
-    template_dir = sys.argv[3]
+    parser.add_argument('--p', required=True, help="Project name (mandatory)")
+    parser.add_argument('--a', required=False, help="App name to be added to INSTALLED_APPS (optional)")
+    parser.add_argument('--t', required=False, help="Template directory to be added to TEMPLATES (optional)")
+
+    args = parser.parse_args()
+
+    prj_name = args.p
+    app_name = args.a
+    template_dir = args.t
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    settings_file = os.path.join(current_dir , prj_name, 'settings.py') 
-    
-    add_app_to_installed_apps(prj_name, app_name, settings_file)
-    add_template_dir(prj_name, template_dir, settings_file)
+    settings_file = os.path.join(current_dir, prj_name, 'settings.py')
+
+    if app_name:
+        add_app_to_installed_apps(prj_name, app_name, settings_file)
+
+    if template_dir:
+        add_template_dir(prj_name, template_dir, settings_file)
 
     os.remove(__file__)
+
+if __name__ == "__main__":
+    main()

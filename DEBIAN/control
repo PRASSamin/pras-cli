@@ -4,7 +4,7 @@ Section: utils
 Priority: optional
 Architecture: all
 Maintainer: Your Name prassamin@gmail.com
-Depends: avahi-daemon, zenity
+Depends: avahi-daemon, zenity, yad
 Description: A CLI tool to run various scripts
  This package provides a command 'pras' that allows running various scripts
  using subcommands such as 'pras .....', 'pras .....', etc.
