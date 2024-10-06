@@ -111,6 +111,12 @@ create_django_project() {
             --center \
             --modal \
             --icon="https://avatars.githubusercontent.com/u/103464543?v=4" 2>/dev/null
+
+
+        if [ $? -eq 0 ]; then
+            code "$PROJECT_DIR/$PROJECT_NAME"
+        fi
+            exit 0
     else
         echo -e "\e[1;31m✗\e[0m Project creation failed."
         echo -e "\e[1;31m✗\e[0m Exit in ${ELAPSED_TIME}ms!"
