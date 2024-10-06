@@ -1,0 +1,10 @@
+Package: pras-cli
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Your Name prassamin@gmail.com
+Depends: avahi-daemon, zenity
+Description: A CLI tool to run various scripts
+ This package provides a command 'pras' that allows running various scripts
+ using subcommands such as 'pras .....', 'pras .....', etc.
