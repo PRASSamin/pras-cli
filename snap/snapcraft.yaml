@@ -9,8 +9,7 @@ description: |
   uses zenity and yad for graphical dialogs when needed. This tool simplifies
   common tasks by providing an easy-to-use command-line interface for various
   system and network operations.
-icon: https://github.
-
+icon: https://raw.githubusercontent.com/PRASSamin/pras-cli/b5d4fd1a5f2969418152fe7a657a5170e2ba1b41/statics/prascli.svg
 grade: stable
 license: MIT
 confinement: strict
