@@ -1,0 +1,29 @@
+name: pras-cli
+base: core22
+version: "1.0"
+summary: A CLI tool by PRAS
+description: |
+  CLI tool for running various utility scripts
+  pras-cli provides a command 'pras' that allows running various utility scripts
+  using subcommands. It integrates with avahi-daemon for network discovery and
+  uses zenity and yad for graphical dialogs when needed. This tool simplifies
+  common tasks by providing an easy-to-use command-line interface for various
+  system and network operations.
+icon: https://github.
+
+grade: stable
+license: MIT
+confinement: strict
+
+apps:
+  pras:
+    command: bin/pras-cli
+
+parts:
+  pras-cli:
+    plugin: dump
+    source: .
+    stage-packages:
+      - avahi-daemon
+      - zenity
+      - yad

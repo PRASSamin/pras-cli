@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-guide/ch-generic.en.html#s-copyright
+Upstream-Name: pras-cli
+Source: https://github.com/PRASSamin/pras-cli
+
+Files: *
+Copyright: 2024 PRAS <prassamin@gmail.com>
+License: GPL-3+
