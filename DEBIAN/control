@@ -1,10 +1,8 @@
 Package: pras-cli
 Version: 1.0
-Section: utils
+Section: misc
 Priority: optional
 Architecture: all
-Maintainer: Your Name prassamin@gmail.com
-Depends: avahi-daemon, zenity, yad
-Description: A CLI tool to run various scripts
- This package provides a command 'pras' that allows running various scripts
- using subcommands such as 'pras .....', 'pras .....', etc.
+Depends: avahi-daemon, zenity
+Maintainer: PRAS <prassamin@gmail.com>
+Description: CLI tool to find devices on the network.
