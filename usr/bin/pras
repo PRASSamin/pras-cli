@@ -8,16 +8,14 @@ SCRIPT_DIR="/usr/local/share/pras-scripts"
 
 # Check if a subcommand (script name) was provided
 if [ -z "$1" ]; then
-  echo "
-Pras CLI - A CLI tool to run various scripts
+  echo "Pras CLI - A CLI tool to run various scripts
 
 Usage: 
 
 pras find [keyword] - Find any device on the network continuously until it is found
 pras django - Configure a Django project with everything needed to start development
 
-pras-cli version 1.0
-  "
+pras-cli version 1.0"
   exit 1
 fi
 
