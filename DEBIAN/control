@@ -1,0 +1,8 @@
+Package: pras-cli
+Version: 1.0
+Section: misc
+Priority: optional
+Architecture: all
+Depends: avahi-daemon, zenity
+Maintainer: PRAS <prassamin@gmail.com>
+Description: CLI tool to find devices on the network.
