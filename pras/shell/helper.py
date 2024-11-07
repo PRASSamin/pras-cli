@@ -1,76 +1,41 @@
-def completer(text, state):
-    import os
-    import readline
+from prompt_toolkit.completion import Completer
 
-    # Get the current input line buffer and split it by spaces
-    full_input = readline.get_line_buffer().split()
-    # Extract the last entered path element
-    path = full_input[-1] if len(full_input) >= 2 else full_input[0]
-
-
-    # If the path does not end with a separator, we are completing part of a name
-    if not path.endswith(os.sep):
-        try:
-            # Find the directory part and the input to match
-            dir_path = os.path.dirname(path)
-            rm = os.path.basename(path)
-
-
-            # List all entries in the directory
-            options = os.listdir(dir_path)
-
-            # Filter options based on the full text entered, allowing hyphens
-            options = [
-                f"{option}{os.sep}" if os.path.isdir(os.path.join(dir_path, option)) else option
-                for option in options if option.startswith(rm)
-            ]
-
-            # Return the matched option based on the current state
-            if state < len(options):
-                matched_option = options[state]
-                # Check if there's a hyphen in the last segment
-                if '-' in rm:
-                    # Remove everything before the last hyphen in the last segment
-                    if rm.endswith('-'):
-                        result = matched_option.replace(rm, '')
-                    else:
-                        x = rm.split('-')
-                        del x[-1]
-                        result = f"{'-'.join(x)}-"
-                        result = matched_option.replace(result, '')
-                else:
-                    result = matched_option
-                
-                return result
-
-        except Exception as e:
-            return None
+class PathCompleter(Completer):
+    """completer for file path suggestions, even with prefixes like 'cd'."""
+    def get_completions(self, document, complete_event):
+        import re
+        import os
+        from prompt_toolkit.completion import Completion
+        # Extract the text before the cursor
+        text_before_cursor = document.text_before_cursor.strip()
+        
+        # Use regex to capture path after any command prefix, e.g., 'cd /'
+        match = re.search(r'([./\\].*)$', text_before_cursor)
+        
+        # Proceed only if we have a valid path segment
+        if match:
+            path = match.group(1)
+            dir_path = os.path.dirname(path) if os.path.dirname(path) else '.'
+            base_name = os.path.basename(path)
             
-    else:
-        # If the path ends with a separator, return directory contents
-        try:
-            options = os.listdir(path)
-            options = [
-                f"{option}{os.sep}" if os.path.isdir(os.path.join(path, option)) else option
-                for option in options if option.startswith(text)
-            ]
-            if state < len(options):
-                return options[state]
-            else:
-                return None
-        except Exception as e:
-            return None
+            try:
+                # List files and directories in the specified directory
+                options = os.listdir(dir_path)
+                # Filter options based on the path entered so far
+                options = [
+                    f"{option}" if ' ' in option and os.path.isdir(os.path.join(dir_path, option)) 
+                    else f"{option}" if ' ' in option 
+                    else f"{option}" if os.path.isdir(os.path.join(dir_path, option)) 
+                    else option
+                    for option in options if option.startswith(base_name)
+                ]
 
-
-
-def get_prompt(path, cli_name):
-    """Generate a command prompt with color formatting."""
-    from colorama import Fore, Style
-    import pras
-    prompt = (
-        f"\n{pras.CLI_PURPLE}┌──({Fore.RED}{cli_name}{Style.RESET_ALL}{pras.CLI_PURPLE})-[{Fore.LIGHTGREEN_EX}{path}{pras.CLI_PURPLE}{Style.RESET_ALL}{pras.CLI_PURPLE}]{Style.RESET_ALL}\n└─❯ "
-    )
-    return prompt
+                # Yield completions with corrected start_position
+                for option in options:
+                    yield Completion(option, start_position=-len(base_name))
+            except Exception:
+                pass
+            
 
 def get_os():
     import platform

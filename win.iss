@@ -4,18 +4,18 @@ AppVersion=0.1.0
 DefaultDirName={commonpf}\PRAS CLI
 DefaultGroupName=PRAS CLI
 OutputDir=.\builds\windows
-OutputBaseFilename=prascli-v2024.11.1
+OutputBaseFilename=prascli-v2024.11.2
 Compression=lzma
 SolidCompression=yes
-SetupIconFile=.\dist\prascli-v2024.11.1\icons\prascli.ico
+SetupIconFile=.\dist\prascli-v2024.11.2\icons\prascli.ico
 UninstallFilesDir={app}\unins
 AppPublisher=PRAS
 AppCopyright=PRAS © 2024
-AppComments=PRAS CLI version 2024.11.1
+AppComments=PRAS CLI version 2024.11.2
 AppPublisherURL=https://pras.me
 
 [Files]
-Source: ".\dist\prascli-v2024.11.1\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs
+Source: ".\dist\prascli-v2024.11.2\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs
 
 [Registry]
 Root: HKCU; Subkey: "Environment"; ValueType: string; ValueName: "Path"; ValueData: "{app}"; Flags: uninsdeletevalue

@@ -1,4 +1,4 @@
-__version__ = "2024.11.1"
+__version__ = "2024.11.2"
 CLI_NAME = "PRAS CLI"
 CLI_AUTHOR = "PRAS Samin"
 CLI_AUTHOR_LINK = "https://github.com/PRASSamin"
