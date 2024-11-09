@@ -2,6 +2,15 @@ class RequirementChecker:
     def __init__(self):
         self.missing_requirements = []
 
+    def __exit(self):
+        import os
+        import sys
+
+        if os.getenv("IN_INTERACTIVE_SHELL") != "1": 
+            sys.exit(1)
+        else:
+            raise Exception
+
     def check_python(self):
         """Check if Python 3 is installed."""
         import shutil
@@ -36,16 +45,20 @@ class RequirementChecker:
         import click
         import requests
         import sys
+        import os
+        import subprocess
         try:
             response = requests.get("https://www.google.com", timeout=5)
             if response.status_code == 200:
                 return True
         except requests.ConnectionError:
             click.echo(f"{Fore.LIGHTRED_EX}No internet connection. Please check your network settings.{Fore.RESET}")
-            sys.exit(1)
+            self.__exit()
+            
+
         except requests.Timeout:
             click.echo(f"{Fore.LIGHTRED_EX}Connection timed out. Please check your network settings.{Fore.RESET}")
-            sys.exit(1)
+            self.__exit()
         return False
 
 
@@ -92,6 +105,7 @@ class RequirementChecker:
         from pras.django.helper.utils import freedesktop_os_release
         from InquirerPy import inquirer        
         from pras.django.helper.services import style
+        import os
 
         install_venv = inquirer.confirm(
             message="Missing dependencies. Would you like to install?",
@@ -113,28 +127,29 @@ class RequirementChecker:
                         self.run_command_with_progress(["sudo", "pacman", "-S", "python-virtualenv", "--noconfirm"])
                     else:
                         click.echo("Unsupported Linux distribution or package manager for automatic installation.")
-                        sys.exit(1)
+                        self.__exit()
                         return
                 elif sys.platform == "darwin":  # macOS
                     if shutil.which("brew"):
                         self.run_command_with_progress(["brew", "install", "virtualenv"])
                     else:
                         click.echo("Homebrew not found. Install Homebrew or use 'pip install virtualenv'")
-                        sys.exit(1)
+                        self.__exit()
                         return
                 elif sys.platform == "win32":
                     self.run_command_with_progress([sys.executable, "-m", "pip", "install", "virtualenv"])
 
             except subprocess.CalledProcessError:
                 click.echo(f'{Fore.RED}{Style.BRIGHT}✗{Style.RESET_ALL} Failed to install "virtualenv". Please install it manually and try again.')
-                sys.exit(1)
+                self.__exit()
         else:
             click.echo(f'{Fore.RED}{Style.BRIGHT}✗{Style.RESET_ALL} The "virtualenv" package is required to proceed. Exiting.')
-            sys.exit(1)
-
+            self.__exit()
+            
     def run_checks(self):
         """Run all checks and take actions if required."""
         import sys
+        import os
 
         python_ok = self.check_python()
         pip_ok = self.check_pip()
@@ -142,7 +157,7 @@ class RequirementChecker:
         virtualenv_ok = self.check_virtualenv()
 
         if not python_ok or not pip_ok:
-            sys.exit(1)
+            self.__exit()
         
         if not virtualenv_ok:
             self.install_virtualenv()
