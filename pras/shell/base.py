@@ -65,7 +65,9 @@ def shellHandler():
             # Execute command
             command_handler.execute_command(command)
             
-            
+        except (KeyboardInterrupt, EOFError):
+            click.echo("\nBye!")
+            break
         # Handle exceptions
         except Exception as e:
             if not command:
@@ -73,9 +75,6 @@ def shellHandler():
             else:
                 # Just print the error without clearing input
                 click.echo(f"pras: {e}")
-        except KeyboardInterrupt:
-            click.echo("\nBye!")
-            break
 
         # Remove the IN_INTERACTIVE_SHELL environment variable
         finally:

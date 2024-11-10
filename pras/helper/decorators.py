@@ -12,7 +12,7 @@ def pras_cli(func):
         if os.getenv("IN_INTERACTIVE_SHELL") == "1":
             try:
                 return func(*args, **kwargs)
-            except KeyboardInterrupt:
+            except (KeyboardInterrupt, EOFError):
                 pass
         else:
             try:
@@ -21,7 +21,7 @@ def pras_cli(func):
                 # Run the decorated function
                 return func(*args, **kwargs)
             except KeyboardInterrupt:
-                """Handle the Ctrl+C interrupt"""
+                """Handle the Ctrl+C or Ctrl+D interrupt"""
                 click.echo("\nBye!")
 
     return wrapper

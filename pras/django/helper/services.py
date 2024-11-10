@@ -242,7 +242,7 @@ class ProjectCreator:
                 click.echo(f"{Fore.RED}{Style.BRIGHT}Project creation failed.{Style.RESET_ALL}")
                 return
             
-            except KeyboardInterrupt:
+            except (KeyboardInterrupt, EOFError):
                 pbar.close()
                 click.echo(f"{Fore.RED}\n\nProject creation cancelled by user.\n{Style.RESET_ALL}")
                 self._rollback()

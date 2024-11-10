@@ -36,5 +36,3 @@ def netfetcher(keyword_arg, loop):
     finally:
         zeroconf.close()
         listener.notify_and_display_results()
-        if os.getenv("IN_INTERACTIVE_SHELL") == "1":
-            subprocess.run(["exit"])
