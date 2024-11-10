@@ -45,6 +45,8 @@ class CommandHandler:
         command = shlex.split(command)
 
         cmd_name = command[0]
+        if cmd_name == "shell":
+            return
         if cmd_name in self._shell_commands:
             self._shell_commands[cmd_name](command[1:] if len(command) > 1 else [])
         elif cmd_name in self._global_command:

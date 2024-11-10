@@ -1,12 +1,25 @@
 from setuptools import setup, find_packages
-
+from pras import __version__ as VERSION
+from pras import CLI_AUTHOR as AUTHOR
+from pras import CLI_AUTHOR_EMAIL as AUTHOR_EMAIL
+from pras import CLI_DESCRIPTION as DESCRIPTION
+from pras import CLI_NAME as NAME
+from pras import CLI_GITHUB_LINK as GITHUB_LINK
+from pras import CLI_URL as WEBSITE
 setup(
-    name="pras-cli",
-    version="2024.11.2",
-    description="A CLI tool",
-    author="PRAS Samin",
-    author_email="prassamin@gmail.com",
-    url="https://github.com/PRASSamin/pras-cli",
+    name=NAME.replace(" ", "-").lower(),
+    version=VERSION,
+    description=DESCRIPTION,
+    author=AUTHOR,
+    author_email=AUTHOR_EMAIL,
+    maintainer_email=AUTHOR_EMAIL,
+    maintainer=AUTHOR, 
+    url=WEBSITE,
+    project_urls={
+        "GitHub": GITHUB_LINK,
+        "Website": WEBSITE
+    },
+    license="MIT",
     packages=find_packages(),
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",

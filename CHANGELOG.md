@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 
-## [2024.11.2] - 2024-11-09
+## [2024.11.1 - 2024.11.2] - 2024-11-09
 ### Added
 - Initial release of **PRAS CLI**.
 - Core command-line functionality for performing primary operations.

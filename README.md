@@ -1,6 +1,8 @@
 ![PRAS CLI](pras/icons/prascli.svg)
 
-**PRAS CLI** is a command-line tool designed to streamline tasks for developers and automate routine processes. This initial release offers essential CLI functionalities, packaged for cross-platform compatibility.
+[![PyPI version](https://img.shields.io/pypi/v/pras-cli.svg)](https://pypi.org/project/pras-cli/) [![License](https://img.shields.io/pypi/l/pras-cli.svg)](https://pypi.org/project/pras-cli/)
+
+**PRAS CLI** is a powerful, cross-platform command-line tool designed to simplify and speed up workflows for developers and tech-savvy users alike. With a suite of essential features and tools, **PRAS CLI** enhances productivity by streamlining everyday tasks, all in a single, easy-to-use package. Built for versatility and efficiency, **PRAS CLI** is your go-to solution for a seamless command-line experience.
 
 ## Features
 
