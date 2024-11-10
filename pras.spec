@@ -4,6 +4,7 @@ datas = [
     ('README.md', '.'),
     ('LICENSE.md', '.'),
     ('CHANGELOG.md', '.'),
+    ('manifest.json', '.'),
     ('pras/icons', 'icons'),
 ]
 
