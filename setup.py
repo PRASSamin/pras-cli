@@ -7,7 +7,7 @@ from pras import CLI_NAME as NAME
 from pras import CLI_GITHUB_LINK as GITHUB_LINK
 from pras import CLI_URL as WEBSITE
 setup(
-    name=NAME.replace(" ", "-").lower(),
+    name=f"{NAME.replace(" ", "-").lower()}",
     version=VERSION,
     description=DESCRIPTION,
     author=AUTHOR,
@@ -51,11 +51,31 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-        "Topic :: CLI",
-        "Intended Audience :: Everyone"
-        "Environment :: Console"
+        "Operating System :: Linux",
+        "Topic :: System :: Software Distribution",
+        "Topic :: Utilities",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
+        "Intended Audience :: End Users/Desktop",
+        "Environment :: Console",
         "Development Status :: 4 - Beta",
         ],
     python_requires='>=3.6', 
+    keywords=[
+        "CLI",
+        "command-line",
+        "automation",
+        "tool",
+        "scripting",
+        "workflow",
+        "productivity",
+        "terminal",
+        "command-line interface",
+        "Python",
+        "utility",
+        "pras-cli",
+        "system administration",
+        "console",
+        "cross-platform"
+    ],
 )

@@ -19,7 +19,7 @@ a = Analysis(
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=['altgraph', 'setuptools', 'packaging', 'pyinstaller-hooks-contrib', 'PyInstaller'],
+    excludes=['altgraph', 'setuptools', 'packaging', 'pyinstaller-hooks-contrib', 'PyInstaller', 'nh3', 'zipp', 'rfc3986', 'Pygments', 'pycparser', 'pkginfo', 'more-itertools', 'mdurl', 'jaraco.context', 'docutils', 'requests-toolbelt', 'readme-renderer', 'markdown-it-py', 'jaraco.functools', 'jaraco.classes', 'importlib-metadata', 'cffi', 'rich', 'cryptography', 'SecretStorage', 'keyring', 'twine'],
     noarchive=False,
     optimize=0,
 )
