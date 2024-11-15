@@ -1,4 +1,4 @@
-#define AppVersion "2024.11.2"
+#define AppVersion "2024.11.3"
 [Setup]
 AppName=PRAS CLI
 AppVersion={#AppVersion}
