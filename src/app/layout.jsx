@@ -23,7 +23,6 @@ const image = `${process.env.NEXT_PUBLIC_BASE_URL}/prascli.svg`;
 // Metadata generation
 export async function generateMetadata() {
   const headersData = headers();
-  const pageUrl = headersData.get('referer') || process.env.NEXT_PUBLIC_BASE_URL;
 
   return {
     icons: {
@@ -48,7 +47,6 @@ export async function generateMetadata() {
     openGraph: {
       title: title,
       description: description,
-      url: pageUrl,
       type: 'website',
       images: [{ url: image, width: 1200, height: 630 }],
       locale: 'en_US',
@@ -60,17 +58,11 @@ export async function generateMetadata() {
       description: description,
       images: [image],
     },
-    alternates: {
-      canonical: pageUrl,
-      languages: { 'en-US': pageUrl },
-    },
-    robots: 'index, follow',
     structuredData: {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
       name: title,
       description: description,
-      url: pageUrl,
       image: { '@type': 'ImageObject', url: image, width: 1200, height: 630 },
     },
     copyright: '© 2024 PRAS',

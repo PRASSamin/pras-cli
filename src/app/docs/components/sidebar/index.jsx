@@ -1,10 +1,12 @@
 import React from 'react'
 import sideBarData from './data';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = () => {
     const data = sideBarData()
     const pathname = usePathname()
+    const router = useRouter()
 
     return (
         <div className='h-[calc(100vh-64px)] top-16 z-30 hidden w-full border-r border-border/40 md:sticky md:block'>
@@ -17,7 +19,7 @@ const Sidebar = () => {
                                 {item.items.map((item, idx) => (
                                     <button
                                         key={idx}
-                                        onClick={() => item.perform(item.pathname)}
+                                        onClick={() => router.push(item.pathname)}
                                         className={`text-[#c0c0c0] hover:text-white flex gap-3 items-center mt-2 text-[14px]`}
                                     >
                                         <span className={`hover:underline 
