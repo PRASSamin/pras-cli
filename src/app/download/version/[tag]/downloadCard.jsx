@@ -13,13 +13,6 @@ import { Download } from '@mui/icons-material';
 import Image from 'next/image';
 
 const DownloadCard = ({ osName, logoSrc, supportedOs, fileExtension, buttonClassName, cardClassName, downloadUrl }) => {
-    const processUrlToDownload = (url) => {
-        const anchor = document.createElement('a');
-        anchor.href = url.replace('https://', 'http://');
-        document.body.appendChild(anchor);
-        anchor.click();
-        document.body.removeChild(anchor);
-    };
 
     return (
         <Card className={`col-span-1 flex flex-col justify-between hover:scale-110 hover:rotate-3 transition-all duration-300 ${cardClassName}`}>
@@ -39,12 +32,13 @@ const DownloadCard = ({ osName, logoSrc, supportedOs, fileExtension, buttonClass
             <CardFooter className="flex gap-2 w-full mt-5">
                 {downloadUrl ? (
                     <Button asChild variant="default" className={`w-full text-white font-semibold ${buttonClassName}`}>
-                        <span
-                            onClick={() => processUrlToDownload(downloadUrl)}
+                        <a
+                            href={downloadUrl}
+                            download={true}
                             className="select-none flex items-center justify-center gap-2 cursor-pointer"
                         >
                             <Download /> {fileExtension}
-                        </span>
+                        </a>
                     </Button>
                 ) : (
                     <Button disabled asChild variant="default" className={`opacity-90 w-full text-white font-semibold ${buttonClassName}`}>

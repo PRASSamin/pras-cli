@@ -1,9 +1,8 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import MainContainer from '@/app/components/MainContainer';
 import Container from '@/app/components/container';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Download } from '@mui/icons-material';
 import {
