@@ -36,7 +36,7 @@ export async function generateMetadata() {
     manifest: '/favicon/site.webmanifest',
     publisher: 'PRAS',
     verification: {
-      google: 'vNaRXyhweWj5RilU-U-6IooUvk-43OoPckDRh7tN25Q',
+      google: '1Hibq62KV62bSjoXtQEEWNH7oArNJYkycmuyJ2yOaW4',
     },
     appleWebApp: {
       title: 'PRAS CLI',
