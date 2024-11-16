@@ -18,6 +18,8 @@
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-context-menu": "^2.2.2",
     "@radix-ui/react-slot": "^1.1.0",
+    "@vercel/analytics": "^1.4.0",
+    "@vercel/speed-insights": "^1.1.0",
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

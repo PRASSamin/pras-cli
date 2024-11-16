@@ -3,6 +3,8 @@ import KBar from "./components/kbar";
 import Drawer from "./components/Drawer";
 import GoogleAna from "./GoogleAna";
 import { headers } from "next/headers";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 // Constants
 export const viewport = {
@@ -80,6 +82,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Analytics />
+        <SpeedInsights />
         <GoogleAna />
         <Drawer>
           <KBar>{children}</KBar>
