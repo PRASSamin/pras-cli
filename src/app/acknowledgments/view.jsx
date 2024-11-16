@@ -71,7 +71,7 @@ const AcknowledgmentsPageView = ({ contributors }) => {
                         >
                             <ul>
                                 <li>
-                                    Inspired by the elegant design principles of <strong>ShadCN</strong>, this site embodies a perfect blend of simplicity and sophistication. ShadCN's influence shaped the intuitive user interface you see today.
+                                    Inspired by the elegant design principles of <strong>ShadCN</strong>, this site embodies a perfect blend of simplicity and sophistication. ShadCN&lsquo;s influence shaped the intuitive user interface you see today.
                                 </li>
                             </ul>
                         </AcknowledgmentsCard>
@@ -84,7 +84,7 @@ const AcknowledgmentsPageView = ({ contributors }) => {
                         >
                             <ul>
                                 <li>
-                                    <strong>Python</strong> has been the driving force behind this project's robust backend. Its flexibility and power have laid the foundation for the CLI tool's core functionality, ensuring a seamless experience for developers.
+                                    <strong>Python</strong> has been the driving force behind this project&lsquo;s robust backend. Its flexibility and power have laid the foundation for the CLI tool&lsquo;s core functionality, ensuring a seamless experience for developers.
                                 </li>
                             </ul>
                         </AcknowledgmentsCard>

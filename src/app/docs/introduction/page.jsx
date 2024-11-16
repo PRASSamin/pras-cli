@@ -15,7 +15,7 @@ export default function IntroductionPageView() {
       <DocContainer>
         <h1 id="introduction" data-id-name="Introduction" className="font-extrabold text-2xl">Introduction</h1>
         <p className="text-[15px] text-muted-foreground mt-2">
-          PRAS CLI Tool is an all-in-one command-line tool that provides powerful commands and utilities for streamlining tasks. It’s designed to simplify workflows, with an interactive shell that offers an accessible command interface.
+          PRAS CLI Tool is an all-in-one command-line tool that provides powerful commands and utilities for streamlining tasks. It&apos;s designed to simplify workflows, with an interactive shell that offers an accessible command interface.
         </p>
 
         <p className="text-[15px] mt-5 leading-7">

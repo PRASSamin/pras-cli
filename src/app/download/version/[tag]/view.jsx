@@ -149,7 +149,7 @@ const VersionDownloadView = ({ data, fullData, notFound }) => {
               </div>
 
               <div className='mt-16'>
-                <h2 id='whats-new' className='text-2xl font-bold flex items-start group'>What's New<a onClick={() => handleIDClick('whats-new')} className='hidden group-hover:inline ml-2'>
+                <h2 id='whats-new' className='text-2xl font-bold flex items-start group'>What&apos;s New<a onClick={() => handleIDClick('whats-new')} className='hidden group-hover:inline ml-2'>
                   <LinkIcon size={16} />
                 </a></h2>
                 <ReactMarkdown className='allow-default'>

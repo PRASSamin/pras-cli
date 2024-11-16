@@ -62,38 +62,39 @@ const Drawer = ({ children }) => {
     }
   }, [activate]);
 
-  const handleMouseMove = (e) => {
-    if (isDragging) {
-      const movement = (e.movementY / window.innerHeight) * 100;
-      let newTranslateY = Math.min(100, Math.max(44, translateY + movement));
-      let newOpacity = Math.max(0, 0.8 - (newTranslateY - 45) / 80);
-
-      setBgOpacity(newOpacity);
-      setTranslateY(newTranslateY);
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    const mainContent = document.querySelector("[data-main-content]");
-
-    if (translateY >= 65) {
-      setTranslateY(100);
-      setBgOpacity(0);
-      if (mainContent) {
-        mainContent.style.transform = "scale(1) translate3d(0, 0, 0)";
-        document.body.classList.remove("overflow-hidden");
-      }
-      setTimeout(() => {
-        setActivate(false);
-      }, 300);
-    } else {
-      setTranslateY(45);
-      setBgOpacity(0.8);
-    }
-  };
 
   useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (isDragging) {
+        const movement = (e.movementY / window.innerHeight) * 100;
+        let newTranslateY = Math.min(100, Math.max(44, translateY + movement));
+        let newOpacity = Math.max(0, 0.8 - (newTranslateY - 45) / 80);
+
+        setBgOpacity(newOpacity);
+        setTranslateY(newTranslateY);
+      }
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      const mainContent = document.querySelector("[data-main-content]");
+
+      if (translateY >= 65) {
+        setTranslateY(100);
+        setBgOpacity(0);
+        if (mainContent) {
+          mainContent.style.transform = "scale(1) translate3d(0, 0, 0)";
+          document.body.classList.remove("overflow-hidden");
+        }
+        setTimeout(() => {
+          setActivate(false);
+        }, 300);
+      } else {
+        setTranslateY(45);
+        setBgOpacity(0.8);
+      }
+    };
+
     if (isDragging) {
       window.addEventListener("mousemove", handleMouseMove);
       window.addEventListener("mouseup", handleMouseUp);

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Highlighter from '@/app/components/Highlighter';
 
 const CommandDjangoPageView = () => {
-
     return (
         <MainContainer FooterClassName={'!mt-0'}>
             <DocContainer>
@@ -89,11 +88,11 @@ const CommandDjangoPageView = () => {
                     </h1>
 
                     <p className="leading-7 text-[15px] mb-5">
-                        Discover the <strong className='bg-zinc-700'>PrasBridge</strong>, a robust tool crafted for projects utilizing <strong className='bg-zinc-700'>SQLAlchemy</strong> as their primary ORM with <strong className='bg-zinc-700'>Django</strong>. This package delivers features often exclusive to Django's ORM, allowing SQLAlchemy users to enjoy Django-style functionalities without needing to rely on Django’s ORM directly.
+                        Discover the <strong className='bg-zinc-700'>PrasBridge</strong>, a robust tool crafted for projects utilizing <strong className='bg-zinc-700'>SQLAlchemy</strong> as their primary ORM with <strong className='bg-zinc-700'>Django</strong>. This package delivers features often exclusive to Django&apos;s ORM, allowing SQLAlchemy users to enjoy Django-style functionalities without needing to rely on Django&apos;s ORM directly.
                     </p>
 
                     <p className="leading-7 text-[15px] mb-5">
-                        Key features include simplified serialization, session management, templatetag for form handling, and more, all optimized to work seamlessly with SQLAlchemy while mimicking the convenience of Django’s ORM.
+                        Key features include simplified serialization, session management, templatetag for form handling, and more, all optimized to work seamlessly with SQLAlchemy while mimicking the convenience of Django&apos;s ORM.
                     </p>
 
                     <p className="leading-7 text-[15px] mb-5">

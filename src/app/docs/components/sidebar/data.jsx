@@ -1,8 +1,4 @@
-import React from 'react'
-import { useRouter } from 'next/navigation'
 const sideBarData = () => {
-  const router = useRouter()
-
   const data = [
     {
       title: 'Getting Started',
@@ -10,12 +6,12 @@ const sideBarData = () => {
         {
           title: 'Introduction',
           pathname: '/docs/introduction',
-          perform: (pathname) => router.push(pathname)
+          perform: (pathname) => window.location.href = pathname
         },
         {
           title: 'Installation',
           pathname: '/docs/installation',
-          perform: (pathname) => router.push(pathname)
+          perform: (pathname) => window.location.href = pathname
         }
       ]
     },
@@ -26,17 +22,17 @@ const sideBarData = () => {
           tag: 'New',
           title: 'Shell',
           pathname: '/docs/commands/shell',
-          perform: (pathname) => router.push(pathname)
+          perform: (pathname) => window.location.href = pathname
         },
         {
           title: 'Django',
           pathname: '/docs/commands/django',
-          perform: (pathname) => router.push(pathname)
+          perform: (pathname) => window.location.href = pathname
         },
         {
           title: 'NetFetch',
           pathname: '/docs/commands/netfetch',
-          perform: (pathname) => router.push(pathname)
+          perform: (pathname) => window.location.href = pathname
         },
       ]
     }

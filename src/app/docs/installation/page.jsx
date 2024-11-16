@@ -4,9 +4,10 @@ import DocContainer from "../components/docContainer";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Highlighter from "@/app/components/Highlighter";
+import Link from "next/link";
 
 const InstallationPageView = () => {
-    
+
     return (
         <MainContainer FooterClassName={'!mt-0'}>
             <DocContainer>
@@ -33,7 +34,7 @@ const InstallationPageView = () => {
 
                 <h2 id="windows" data-id-name="Windows" className="text-xl font-extrabold mt-10 border-b pb-3 mb-5">Windows</h2>
                 <p className="text-[15px] text-muted-foreground mt-2 mb-2 leading-7">
-                    Download the latest version of the PRAS CLI Tool for <a href="/download/version/latest" className="font-bold underline hover:text-white">Windows</a>. You will receive a <strong>.exe</strong> file. Run the file and follow the installation process to complete the setup and access the CLI. After installation, restarting your system is recommended (though not mandatory). If you choose not to restart, make sure to close and reopen any open terminal windows. You can then access the CLI by typing <strong>pras</strong> in the terminal.
+                    Download the latest version of the PRAS CLI Tool for <Link href="/download/version/latest" className="font-bold underline hover:text-white">Windows</Link>. You will receive a <strong>.exe</strong> file. Run the file and follow the installation process to complete the setup and access the CLI. After installation, restarting your system is recommended (though not mandatory). If you choose not to restart, make sure to close and reopen any open terminal windows. You can then access the CLI by typing <strong>pras</strong> in the terminal.
                 </p>
 
                 <p className="text-[15px] mt-5 mb-2 leading-7">Run the following command to get information about the CLI</p>
@@ -44,7 +45,7 @@ const InstallationPageView = () => {
                 <div id="linux" data-id-name="Linux">
                     <h2 className="text-xl font-extrabold mt-10 border-b pb-3 mb-5">Linux</h2>
                     <p className="text-[15px] text-muted-foreground mt-2 mb-2 leading-7">
-                        Download the latest version of the PRAS CLI Tool for <a href="/download/version/latest" className="font-bold underline hover:text-white">Linux</a>. Then run the following commands in the terminal to install the CLI.
+                        Download the latest version of the PRAS CLI Tool for <Link href="/download/version/latest" className="font-bold underline hover:text-white">Linux</Link>. Then run the following commands in the terminal to install the CLI.
                     </p>
                     <h3 id="debian" data-id-name="Debian" className="text-lg mt-5">Debian-based distributions</h3>
                     <Highlighter language="bash">
@@ -60,7 +61,7 @@ const InstallationPageView = () => {
     # or
     sudo yum install pras-cli-*.rpm`}
                     </Highlighter>
-    
+
                     <p className="text-[15px] mt-5 mb-2 leading-7">Run the following command to get information about the CLI</p>
                     <Highlighter language="bash">
                         pras --help

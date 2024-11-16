@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import MainContainer from "./components/MainContainer";
 import Container from "./components/container";
 import { Button } from "@/components/ui/button";
@@ -13,13 +13,13 @@ export default function Home() {
   const boxSize = 50; // Size of each box in pixels
   const extraColumns = 3; // Number of extra columns on each side
 
-  // List of image URLs
-  const imageUrls = [
+  const imageUrls = useMemo(() => [
     "/acknowledgments/github.svg",
     "/acknowledgments/nextjs.svg",
     "/acknowledgments/python.svg",
     "/acknowledgments/shadcn.svg",
-  ];
+  ], []);
+
 
   useEffect(() => {
     // Function to calculate the number of boxes
@@ -64,7 +64,7 @@ export default function Home() {
       window.removeEventListener("resize", calculateBoxes);
       clearInterval(interval);
     };
-  }, [boxCount.total, imageUrls]); 
+  }, [boxCount.total, imageUrls]);
 
   return (
     <MainContainer FooterClassName={"!mt-0 relative bg-background"}>
@@ -103,7 +103,7 @@ export default function Home() {
             {Array.from({ length: boxCount.total }).map((_, index) => (
               <div
                 key={index}
-                className={`border-[.2px] border-[#111111] hover:bg-zinc-950 hover:border-zinc-800 rounded transition-all duration-[2000ms]  aspect-square bg-transparent ${activeBox === index ? "active-box" : ""
+                className={`border-[.2px] border-[#111111] hover:bg-zinc-950 hover:border-zinc-800 rounded transition-all duration-1000  aspect-square bg-transparent ${activeBox === index ? "active-box" : ""
                   }`}
                 style={{ width: `${boxSize}px`, height: `${boxSize}px` }}
               >
