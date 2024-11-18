@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export default function middleware(req) {
+export default async function middleware(req) {
   const { pathname } = req.nextUrl;
 
   const handleDownloadPage = () => {
@@ -15,9 +15,22 @@ export default function middleware(req) {
     return handleDownloadPage();
   }
 
-  const handleDocsPage = () => {
+  const handleDocsPage = async () => {
     if (pathname === '/docs' || pathname === '/docs/') {
       return NextResponse.redirect(new URL('/docs/introduction', req.url));
+    }
+    if (pathname === "/docs/commands") {
+      let commands = [];
+      await fetch(new URL('/commands.json', req.url))
+        .then((res) => res.json())
+        .then((data) => {
+          commands = data;
+        })
+        .catch((err) => {
+          commands = [];
+        });
+
+      return NextResponse.redirect(new URL(`${commands.length > 0 ? commands[0].pathname : "/docs"}`, req.url));
     }
   }
 

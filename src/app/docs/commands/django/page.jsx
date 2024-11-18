@@ -1,6 +1,6 @@
 import CommandDjangoPageView from "./view";
 
-export default async function IntroductionPage() {
+export async function CommandDjangoPage() {
     return <CommandDjangoPageView />;
 }
 
@@ -30,3 +30,5 @@ export async function generateMetadata() {
         },
     };
 }
+
+export default CommandDjangoPage;

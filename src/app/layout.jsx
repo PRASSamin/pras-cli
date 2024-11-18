@@ -2,7 +2,6 @@ import "./globals.css";
 import KBar from "./components/kbar";
 import Drawer from "./components/Drawer";
 import GoogleAna from "./GoogleAna";
-import { headers } from "next/headers";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
@@ -22,13 +21,11 @@ const image = `${process.env.NEXT_PUBLIC_BASE_URL}/prascli.svg`;
 
 // Metadata generation
 export async function generateMetadata() {
-  const headersData = headers();
-
   return {
     icons: {
       icon: [
         { url: '/favicon/favicon-96x96.png', sizes: '96x96' },
-        { url: '/favicon/favicon.ico', media: '(prefers-color-scheme: dark)' },
+        { url: '/favicon/favicon.ico' },
       ],
       apple: [
         { url: '/favicon/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },

@@ -1,5 +1,4 @@
-import { LocalTaxi } from '@mui/icons-material';
-import React, { useMemo, useRef, Fragment, forwardRef } from 'react'
+import React, { useMemo, useRef, Fragment } from 'react'
 
 const ResultItems = ({ action, active, rootActionId }) => {
     const ancestors = useMemo(() => {

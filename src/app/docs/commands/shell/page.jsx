@@ -1,6 +1,6 @@
 import CommandShellPageView from "./view";
 
-export default async function IntroductionPage() {
+export async function CommandShellPage() {
     return <CommandShellPageView />;
 }
 
@@ -30,3 +30,6 @@ export async function generateMetadata() {
         },
     };
 }
+
+
+export default CommandShellPage

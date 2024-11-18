@@ -1,0 +1,23 @@
+[
+    {
+        "pathname": "/docs/commands/shell",
+        "title": "shell",
+        "description": "A interactive shell that lets you run pras commands directly by name. and also allow you to run most of common shell commands.",
+        "created_at": "2024-11-18T19:40:54.805967",
+        "id": 1
+    },
+    {
+        "pathname": "/docs/commands/django",
+        "title": "django",
+        "description": "The Django command allows you to quickly set up a new Django project with essential configurations. It creates a new project directory with the name you specify, initializes a virtual environment, and sets up fundamental components, saving significant time in project setup.",
+        "created_at": "2024-11-18T18:42:38.756163",
+        "id": 2
+    },
+    {
+        "pathname": "/docs/commands/netfetch",
+        "title": "netfetch",
+        "description": "The NetFetch command is a cross-platform network scanning utility designed to locate devices and services within a network. It identifies and lists all available devices and their services, similar to the avahi-browse -a -t command in Linux, but with enhanced compatibility for Windows, and other operating systems.",
+        "created_at": "2024-11-18T18:42:19.713904",
+        "id": 3
+    }
+]

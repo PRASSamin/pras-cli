@@ -3,51 +3,51 @@ const DrawerData = () => {
         {
             id: 1,
             title: 'Home',
-            perform: () => window.location.href = '/',
+            pathname: '/',
         },
         {
             id: 3,
             title: 'Documentation',
-            perform: () => window.location.href = '/docs',
+            pathname: '/docs',
         },
         {
             title: 'Commands',
-            perform: () => window.location.href = '/docs/commands',
+            pathname: '/docs/commands',
         },
         {
             id: 2,
             title: 'Download',
-            perform: () => window.location.href = '/download/version/latest',
+            pathname: '/download/version/latest',
         },
         {
             title: 'Acknowledgments',
-            perform: () => window.location.href = '/acknowledgments',
+            pathname: '/acknowledgments',
         },
         {
             title: 'Introduction',
             section: 'Getting Started',
-            perform: () => window.location.href = '/docs',
+            pathname: '/docs',
         },
         {
             title: 'Installation',
             section: 'Getting Started',
-            perform: () => window.location.href = '/docs/installation',
+            pathname: '/docs/installation',
         },
         {
             title: 'shell',
             tag: 'New',
             section: 'Commands',
-            perform: () => window.location.href = '/docs/commands/shell',
+            pathname: '/docs/commands/shell',
         },
         {
             title: 'Django',
             section: 'Commands',
-            perform: () => window.location.href = '/docs/commands/django',
+            pathname: '/docs/commands/django',
         },
         {
             title: 'NetFetch',
             section: 'Commands',
-            perform: () => window.location.href = '/docs/commands/netfetch',
+            pathname: '/docs/commands/netfetch',
         },
     ];
 

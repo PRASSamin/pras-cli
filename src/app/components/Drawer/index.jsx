@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useContext, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import DrawerData from "./data";
+import Link from "next/link";
 
 const DrawerContext = React.createContext();
 
@@ -15,7 +15,6 @@ const Drawer = ({ children }) => {
   const [bgOpacity, setBgOpacity] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const items = DrawerData();
-  const router = useRouter();
 
   // Group items by section and identify super menu items
   const { groupedItems, superMenuItems } = items.reduce(
@@ -133,15 +132,15 @@ const Drawer = ({ children }) => {
         {/* Render super menu items as top-level */}
         <div className="">
           {superMenuItems.map((item, idx) => (
-            <button
+            <Link
               key={idx}
-              onClick={item.perform}
+              href={item.pathname}
               className="hover:text-gray-400 text-[#FAFAFA] flex gap-3 items-center mt-2 text-base"
             >
               {item.title} {item?.tag && (
                 <span className="text-xs px-1.5 py-[1px] rounded-full bg-purple-500 text-white">{item.tag}</span>
               )}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -151,15 +150,15 @@ const Drawer = ({ children }) => {
             <span className="font-medium">{section}</span>
             <div className="text-base text-[#a1a1aa]">
               {items.map((item, idx) => (
-                <button
+                <Link
+                  href={item.pathname}
                   key={idx}
-                  onClick={item.perform}
                   className="hover:text-gray-500 mt-2 flex gap-3 items-center"
                 >
                   {item.title}  {item?.tag && (
                     <span className="text-xs px-1.5 py-[1px] rounded-full bg-purple-500 text-white">{item.tag}</span>
                   )}
-                </button>
+                </Link>
               ))}
             </div>
           </div>

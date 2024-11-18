@@ -1,6 +1,6 @@
 import CommandNetfetchPageView from "./view";
 
-export default async function IntroductionPage() {
+export async function CommandNetFetchPage() {
     return <CommandNetfetchPageView />;
 }
 
@@ -30,3 +30,5 @@ export async function generateMetadata() {
         },
     };
 }
+
+export default CommandNetFetchPage;
