@@ -1,6 +1,7 @@
 import NodeCache from 'node-cache';
 import axios from 'axios';
 import VersionDownloadView from './view';
+import { metatag } from '@/lib/metatag';
 
 const cache = new NodeCache({ stdTTL: 3600 });
 
@@ -83,23 +84,6 @@ export async function generateMetadata({ params }) {
 
     const pageTitle = `Download ${selectedTag.replace('v', '')} | PRAS CLI`;
 
-    return {
-        title: pageTitle,
-        canonical: pageUrl,
-        openGraph: {
-            title: pageTitle,
-            url: pageUrl,
-        },
-        alternates: {
-            canonical: pageUrl,
-            languages: { 'en-US': pageUrl },
-        },
-        robots: 'index, follow',
-        structuredData: {
-            '@context': 'https://schema.org',
-            '@type': 'WebPage',
-            url: pageUrl,
-            name: pageTitle,
-        },
-    };
+
+    return metatag(pageTitle, pageUrl, 'index, follow');
 }

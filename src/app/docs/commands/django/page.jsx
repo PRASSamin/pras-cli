@@ -1,4 +1,5 @@
 import CommandDjangoPageView from "./view";
+import { metatag } from "@/lib/metatag";
 
 export async function CommandDjangoPage() {
     return <CommandDjangoPageView />;
@@ -8,27 +9,7 @@ export async function generateMetadata() {
     const pageTitle = `Django | PRAS CLI`;
     const pageUrl = `https://cli.pras.me/docs/commands/django`;
 
-    return {
-        title: pageTitle,
-        canonical: pageUrl,
-        openGraph: {
-            title: pageTitle,
-            url: pageUrl,
-            site_name: pageTitle,
-        },
-        twitter: {
-            title: pageTitle,
-        },
-        alternates: {
-            canonical: pageUrl,
-            languages: { 'en-US': pageUrl },
-        },
-        robots: 'index, follow',
-        structuredData: {
-            name: pageTitle,
-            url: pageUrl,
-        },
-    };
+    return metatag(pageTitle, pageUrl, 'index, follow');
 }
 
 export default CommandDjangoPage;

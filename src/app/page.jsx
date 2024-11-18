@@ -1,4 +1,5 @@
-import Home from "./view";
+import Home from "./landing/view";
+import { metatag } from "@/lib/metatag";
 
 export default async function HomePage() {
   return <Home />;
@@ -7,28 +8,5 @@ export default async function HomePage() {
 HomePage.displayName = "HomePage";
 
 export async function generateMetadata() {
-  const pageTitle = `PRAS CLI`;
-  const pageUrl = `https://cli.pras.me/`;
-
-  return {
-    title: pageTitle,
-    canonical: pageUrl,
-    openGraph: {
-      title: pageTitle,
-      url: pageUrl,
-      site_name: pageTitle,
-    },
-    twitter: {
-      title: pageTitle,
-    },
-    alternates: {
-      canonical: pageUrl,
-      languages: { 'en-US': pageUrl },
-    },
-    robots: 'index, follow',
-    structuredData: {
-      name: pageTitle,
-      url: pageUrl,
-    },
-  };
+  return metatag('PRAS CLI', 'https://cli.pras.me/', 'index, follow');
 }
