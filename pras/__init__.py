@@ -1,4 +1,4 @@
-__version__ = "2024.11.2"
+__version__ = "2024.11.3"
 
 CLI_NAME = "PRAS CLI"
 

@@ -1,5 +1,5 @@
 Name:           pras-cli
-Version:        2024.11.2
+Version:        2024.11.3
 Release:        1%{?dist}
 Summary:        Cross-platform command-line tool for productivity and workflow efficiency
 

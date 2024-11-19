@@ -13,3 +13,5 @@ dist
 builds
 venv
 *.egg-info
+old_build
+documentation
