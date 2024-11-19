@@ -1,6 +1,6 @@
 <div  align="center">
   <a href="https://cli.pras.me">
-  <img src="https://raw.githubusercontent.com/PRASSamin/pras-cli/refs/heads/linux/pras/icons/prascli.svg" width="50%" alt="PRAS CLI" />
+  <img src="https://raw.githubusercontent.com/PRASSamin/pras-cli/ba19b9f9ebb2090dd558c9b6ef8ed4f7b982cc5c/pras/icons/prascli.svg" width="50%" alt="PRAS CLI" />
   </a>
 </div>
 <br/>
