@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import MainContainer from '@/app/components/MainContainer';
 import Container from '@/app/components/container';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
 import { Download } from '@mui/icons-material';
 import {
@@ -12,13 +13,39 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { usePathname } from 'next/navigation';
-import ReactMarkdown from 'react-markdown';
+import { Loader } from 'lucide-react';
+const ReactMarkdown = dynamic(() => import('react-markdown'), {
+  ssr: false, loading: () => <div className="mt-8 shadow rounded-md py
+  -4  w-full mx-auto">
+    <div className="animate-pulse flex space-x-4">
+      <div className="flex-1 space-y-6 py-1">
+        <div className="h-2 bg-slate-700 rounded"></div>
+        <div className="space-y-3">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+            <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+            <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+          </div>
+          </div>
+          <div className='space-y-3'>
+            <div className="h-2 bg-slate-700 rounded"></div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="h-2 bg-slate-700 rounded col-span-2"></div>
+              <div className="h-2 bg-slate-700 rounded col-span-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+});
 import { LinkIcon } from 'lucide-react';
 import DownloadCard from './downloadCard';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,

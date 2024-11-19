@@ -4,7 +4,6 @@ import Drawer from "./components/Drawer";
 import GoogleAna from "./GoogleAna";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
-import Head from "next/head";
 
 // Constants
 export const viewport = {
@@ -18,8 +17,7 @@ export const viewport = {
 const title = 'PRAS CLI';
 const description =
   'PRAS CLI is a versatile, cross-platform command-line tool that simplifies workflows and enhances productivity. Streamline tasks, boost efficiency, and enjoy a seamless command-line experience with PRAS CLI, the ultimate tool for developers and tech-savvy users.';
-const image = `https://cli.pras.me/favicon/favicon.svg`;
-// Metadata generation
+
 export const metadata = {
   icons: {
     icon: [
