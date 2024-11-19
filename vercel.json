@@ -1,7 +1,9 @@
 {
-    "git": {
-      "deploymentEnabled": {
-        "main": false
-      }
+  "git": {
+    "deploymentEnabled": {
+      "main": false,
+      "win": false,
+      "linux": false
     }
   }
+}
