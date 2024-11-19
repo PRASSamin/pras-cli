@@ -1,5 +1,5 @@
 <a href="https://cli.pras.me" style="display: flex; align-items: center; justify-content: center; background-color: #000; max-width: 50%; border-radius: 10px; padding: 40px; margin: 0 auto 40px;">
-  <img src="https://raw.githubusercontent.com/PRASSamin/pras-cli/0c737e49903d148fd92004ee04a55b7334a4f29c/pras/icons/prascli.svg" alt="PRAS CLI" />
+  <img src="https://raw.githubusercontent.com/PRASSamin/pras-cli/refs/heads/linux/pras/icons/prascli.svg" alt="PRAS CLI" />
 </a>
 
 [![PyPI version](https://img.shields.io/github/manifest-json/v/PRASSamin/pras-cli?label=version)](https://cli.pras.me/version) [![License](https://img.shields.io/github/license/PRASSamin/pras-cli)](https://cli.pras.me/license)
