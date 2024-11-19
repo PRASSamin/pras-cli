@@ -1,5 +1,5 @@
 export const metatag = (pageTitle, pageUrl, robots) => {
-  const fav = "https://cli.pras.me/favicon/favicon.svg";
+  const fav = "https://cli.pras.me/favicon/favicon-512x512.png";
   return {
     title: pageTitle,
     canonical: pageUrl,
