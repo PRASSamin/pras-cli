@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { NavigateBefore } from '@mui/icons-material';
 import { getAllIds } from '@/lib/utils';
+import Link from 'next/link';
 
 const DocContainer = ({ children }) => {
     const pathname = usePathname()
@@ -50,24 +51,28 @@ const DocContainer = ({ children }) => {
                             </BreadcrumbList>
                         </Breadcrumb>
 
-                        <div id='content' className={`min-h-[calc(100vh-44px-65px)]`}>{children}</div>
+                        <div id='content' className={`min-h-[calc(100vh-44px-65px-76px-40px-1.5rem)] lg:min-h-[calc(100vh-44px-65px-76px-40px-1rem)]`}>{children}</div>
 
 
                         <div className="flex justify-between w-full items-center mt-10">
                             <div>
                                 {pnpath.prev && <Button className="flex gap-1 items-center"
-                                    onClick={() => pnpath.prev.perform(pnpath.prev.pathname)}
+                                    asChild
                                     variant="ghost">
-                                    <NavigateBefore fontSize='large' />
-                                    {pnpath.prev.title}
+                                    <Link href={pnpath.prev.pathname}>
+                                        <NavigateBefore fontSize='large' />
+                                        {pnpath.prev.title}
+                                    </Link>
                                 </Button>}
                             </div>
                             <div>
                                 {pnpath.next && <Button className="flex gap-1 items-center"
-                                    onClick={() => pnpath.next.perform(pnpath.next.pathname)}
+                                    asChild
                                     variant="ghost">
-                                    {pnpath.next.title}
-                                    <NavigateNextIcon fontSize='large' />
+                                    <Link href={pnpath.next.pathname}>
+                                        {pnpath.next.title}
+                                        <NavigateNextIcon fontSize='large' />
+                                    </Link>
                                 </Button>}
                             </div>
                         </div>
